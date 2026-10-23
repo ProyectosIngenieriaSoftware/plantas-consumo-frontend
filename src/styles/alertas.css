@@ -1,0 +1,198 @@
+.flora-alert {
+    width: min(430px, calc(100vw - 32px)) !important;
+    padding: 24px !important;
+    border: 1px solid #E0E9E3 !important;
+    border-radius: 20px !important;
+    background: #FFFFFF !important;
+    box-shadow:
+        0 30px 80px rgba(20, 50, 35, .18),
+        0 8px 25px rgba(20, 50, 35, .08) !important;
+    font-family:
+        Inter,
+        "Segoe UI",
+        Arial,
+        sans-serif !important;
+}
+
+.flora-alert .swal2-icon {
+    margin: 7px auto 4px !important;
+    transform: scale(.86);
+}
+
+.flora-alert .swal2-icon.swal2-success {
+    border-color: #A8D5B8 !important;
+    color: #2F7A58 !important;
+}
+
+.flora-alert .swal2-success-ring {
+    border-color: #D7EDDF !important;
+}
+
+.flora-alert .swal2-success-line-tip,
+.flora-alert .swal2-success-line-long {
+    background: #46A36F !important;
+}
+
+.flora-alert .swal2-icon.swal2-question {
+    border-color: #B8D7C5 !important;
+    color: #2F7A58 !important;
+}
+
+.flora-alert .swal2-icon.swal2-warning {
+    border-color: #F0D79C !important;
+    color: #C28A1B !important;
+}
+
+.flora-alert .swal2-icon.swal2-error {
+    border-color: #E9B9B9 !important;
+    color: #C44F4F !important;
+}
+
+.flora-alert .swal2-title {
+    padding: 5px 0 0 !important;
+    color: #1B3328 !important;
+    font-size: 21px !important;
+    font-weight: 750 !important;
+    line-height: 1.2 !important;
+}
+
+.flora-alert .swal2-html-container,
+.flora-alert .swal2-container {
+    color: #6F8177;
+}
+
+.flora-alert .swal2-html-container {
+    margin: 10px 0 0 !important;
+    padding: 0 !important;
+    color: #6F8177 !important;
+    font-size: 13.5px !important;
+    line-height: 1.55 !important;
+}
+
+.flora-alert .swal2-actions {
+    width: 100% !important;
+    margin: 22px 0 0 !important;
+    gap: 9px !important;
+}
+
+.flora-alert-confirm {
+    min-width: 130px;
+    height: 42px;
+    padding: 0 18px;
+    border: 0;
+    border-radius: 11px;
+    background: #2F7A58;
+    color: #FFFFFF;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 650;
+    cursor: pointer;
+    transition:
+        background .18s ease,
+        transform .18s ease,
+        box-shadow .18s ease;
+}
+
+.flora-alert-confirm:hover {
+    background: #256146;
+    transform: translateY(-1px);
+    box-shadow:
+        0 6px 16px rgba(47, 122, 88, .20);
+}
+
+.flora-alert-confirm:focus-visible {
+    outline: 3px solid rgba(47, 122, 88, .25);
+    outline-offset: 2px;
+}
+
+.flora-alert-cancel {
+    min-width: 110px;
+    height: 42px;
+    padding: 0 18px;
+    border: 1px solid #D6E2DA;
+    border-radius: 11px;
+    background: #FFFFFF;
+    color: #50655A;
+    font-family: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+    transition:
+        background .18s ease,
+        border-color .18s ease,
+        transform .18s ease;
+}
+
+.flora-alert-cancel:hover {
+    background: #F3F7F4;
+    border-color: #B9CFC0;
+    transform: translateY(-1px);
+}
+
+.flora-alert-danger {
+    background: #B84B4B;
+}
+
+.flora-alert-danger:hover {
+    background: #9F3D3D;
+    box-shadow:
+        0 6px 16px rgba(184, 75, 75, .22);
+}
+
+.flora-confirm-text {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+    color: #61736A;
+}
+
+.flora-confirm-text strong {
+    margin: 2px 0;
+    color: #263F32;
+    font-size: 14px;
+    font-weight: 700;
+}
+
+.flora-alert-detail {
+    width: min(760px, calc(100vw - 32px)) !important;
+    max-height: calc(100vh - 70px);
+    overflow: hidden;
+}
+
+.flora-alert-detail .swal2-html-container {
+    max-height: 60vh;
+    overflow-y: auto;
+    padding: 4px 5px 4px 0 !important;
+    scrollbar-width: thin;
+    scrollbar-color: #B8CEC0 transparent;
+}
+
+.flora-alert-detail .swal2-title {
+    font-style: italic;
+    font-size: 23px !important;
+}
+
+.swal2-container {
+    backdrop-filter: blur(4px);
+}
+
+.swal2-backdrop-show {
+    background: rgba(12, 30, 21, .46) !important;
+}
+
+@media(max-width:520px) {
+    .flora-alert {
+        padding: 20px 16px !important;
+        border-radius: 17px !important;
+    }
+
+    .flora-alert .swal2-actions {
+        flex-direction: column;
+    }
+
+    .flora-alert-confirm,
+    .flora-alert-cancel {
+        width: 100%;
+    }
+}
