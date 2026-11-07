@@ -1,0 +1,147 @@
+.cb-combo {
+    position: relative;
+    display: block;
+    width: 100%;
+    min-width: 0;
+}
+
+.cb-combo-control {
+    width: 100%;
+    min-height: 42px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 11px;
+    border: 1px solid #D5E2DA;
+    border-radius: 10px;
+    background: #fff;
+    color: #6A7E72;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.cb-combo-control:focus-within,
+.cb-combo.is-open .cb-combo-control {
+    border-color: #77AA89;
+    box-shadow: 0 0 0 3px rgba(44, 130, 83, .1);
+}
+
+.cb-combo-control>svg {
+    flex: 0 0 auto;
+}
+
+.cb-combo-control>svg:last-child {
+    margin-left: auto;
+    transition: transform .15s ease;
+}
+
+.cb-combo-control>svg:last-child.is-open {
+    transform: rotate(180deg);
+}
+
+.cb-combo .cb-combo-control input {
+    width: 100%;
+    min-width: 0;
+    height: 40px;
+    min-height: 0;
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    background: transparent;
+    color: inherit;
+    font: inherit;
+    font-size: 13px;
+    box-shadow: none;
+    appearance: none;
+}
+
+.cb-combo .cb-combo-control input:hover,
+.cb-combo .cb-combo-control input:focus {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    outline: 0;
+    background: transparent;
+    box-shadow: none;
+}
+
+.cb-combo .cb-combo-control input::placeholder {
+    color: #87988D;
+}
+
+.cb-combo-control:has(input[aria-invalid="true"]),
+.cb-combo.error .cb-combo-control,
+.cb-combo.ec-input-error .cb-combo-control {
+    border-color: #E5484D;
+    background-color: #FFF7F7;
+}
+
+.cb-combo.is-disabled .cb-combo-control {
+    background: #F1F5F2;
+    cursor: not-allowed;
+    opacity: .65;
+}
+
+.cb-combo-options {
+    position: absolute;
+    z-index: 50;
+    top: calc(100% + 5px);
+    right: 0;
+    left: 0;
+    max-height: 230px;
+    overflow: auto;
+    padding: 5px;
+    border: 1px solid #D5E2DA;
+    border-radius: 10px;
+    background: #fff;
+    box-shadow: 0 10px 24px rgba(18, 50, 42, .16);
+}
+
+.cb-combo.opens-up .cb-combo-options {
+    top: auto;
+    bottom: calc(100% + 5px);
+}
+
+.cb-combo-options button {
+    width: 100%;
+    min-height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 9px;
+    padding: 8px 10px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: #1B3328;
+    font: inherit;
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.cb-combo-options button:hover,
+.cb-combo-options button.is-active,
+.cb-combo-options button[aria-selected="true"] {
+    background: #EAF5EE;
+    color: #1F5C43;
+}
+
+.cb-combo-options button svg {
+    flex: 0 0 auto;
+    color: #2F7A58;
+}
+
+.cb-combo-options p {
+    margin: 0;
+    padding: 11px 10px;
+    color: #7B8C83;
+    font-size: 12.5px;
+}
+
+@media(prefers-reduced-motion: reduce) {
+    .cb-combo-control,
+    .cb-combo-control>svg:last-child {
+        transition: none;
+    }
+}

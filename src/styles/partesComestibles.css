@@ -1,0 +1,1824 @@
+.pc-page.partes-comestibles-page,
+.pc-page.partes-comestibles-page * {
+    box-sizing: border-box;
+}
+
+.pc-page.partes-comestibles-page {
+    --pc-ink: var(--ink, #1B3328);
+    --pc-text: var(--text, #3B5146);
+    --pc-muted: var(--muted, #7B8C83);
+    --pc-line: var(--line, #DCE7E0);
+    --pc-field: var(--field, #F1F5F2);
+    --pc-tint: #F3F8F5;
+    --pc-deep: #12322A;
+    --pc-accent: var(--accent, #2F7A58);
+    --pc-accent-dark: var(--accent-dark, #256146);
+    width: 100%;
+    max-width: 1500px;
+    min-width: 0;
+    margin: 0 auto;
+    box-sizing: border-box;
+}
+
+.pc-page.partes-comestibles-page .pc-head {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+    margin-bottom: 20px;
+    padding: 28px 32px;
+    border-radius: 20px;
+    background: linear-gradient(120deg, #12322A 0%, #1F5C4A 62%, #2F7A58 100%);
+    box-shadow: 0 14px 34px rgba(18, 50, 42, .22);
+}
+
+.pc-page.partes-comestibles-page .pc-head::before {
+    content: "";
+    position: absolute;
+    top: -120px;
+    right: -60px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(111, 211, 155, .28), transparent 68%);
+    pointer-events: none;
+}
+
+.pc-page.partes-comestibles-page .pc-head::after {
+    content: "";
+    position: absolute;
+    bottom: -140px;
+    left: 34%;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(255, 255, 255, .07), transparent 70%);
+    pointer-events: none;
+}
+
+.pc-page.partes-comestibles-page .pc-head>* {
+    position: relative;
+    z-index: 1;
+}
+
+.pc-page.partes-comestibles-page .pc-crumb {
+    color: rgba(255, 255, 255, .62);
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.pc-page.partes-comestibles-page .pc-crumb i {
+    margin: 0 4px;
+    font-style: normal;
+    opacity: .5;
+}
+
+.pc-page.partes-comestibles-page .pc-head h1 {
+    margin: 4px 0 0;
+    color: #fff;
+    font-size: 32px;
+    font-weight: 750;
+    letter-spacing: -.7px;
+    line-height: 1.1;
+}
+
+.pc-page.partes-comestibles-page .pc-head p {
+    margin: 8px 0 0;
+    color: rgba(255, 255, 255, .74);
+    font-size: 14px;
+}
+
+.pc-page.partes-comestibles-page .pc-btn {
+    min-height: 40px;
+    padding: 0 16px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 11px;
+    font: inherit;
+    font-size: 13.5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .15s ease, border-color .15s ease, box-shadow .15s ease, transform .15s ease;
+}
+
+.pc-page.partes-comestibles-page .pc-btn:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+.pc-page.partes-comestibles-page .pc-btn-lg {
+    min-height: 44px;
+    padding: 0 20px;
+}
+
+.pc-page.partes-comestibles-page .pc-btn-primary {
+    border: 1px solid var(--pc-accent-dark);
+    background: linear-gradient(135deg, #3A9468, #2A6F4E);
+    color: #fff;
+    box-shadow: 0 6px 16px rgba(47, 122, 88, .26), inset 0 1px 0 rgba(255, 255, 255, .16);
+}
+
+.pc-page.partes-comestibles-page .pc-btn-primary:hover:not(:disabled) {
+    box-shadow: 0 9px 22px rgba(47, 122, 88, .34), inset 0 1px 0 rgba(255, 255, 255, .16);
+    transform: translateY(-1px);
+}
+
+.pc-page.partes-comestibles-page .pc-head .pc-btn-primary {
+    border-color: #fff;
+    background: #fff;
+    color: #1F5C4A;
+    box-shadow: 0 6px 18px rgba(0, 0, 0, .18);
+}
+
+.pc-page.partes-comestibles-page .pc-head .pc-btn-primary:hover:not(:disabled) {
+    background: #EAF5EE;
+    box-shadow: 0 9px 22px rgba(0, 0, 0, .24);
+}
+
+.pc-page.partes-comestibles-page .pc-btn-ghost {
+    border: 1px solid #CFE0D5;
+    background: #fff;
+    color: var(--pc-text);
+}
+
+.pc-page.partes-comestibles-page .pc-btn-ghost:hover:not(:disabled) {
+    background: #EEF5F0;
+    border-color: #B5CFBF;
+}
+
+.pc-page.partes-comestibles-page .pc-iconbtn {
+    width: 40px;
+    height: 40px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #D3E1D8;
+    border-radius: 11px;
+    background: #fff;
+    color: #5A6F63;
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease, border-color .15s ease;
+}
+
+.pc-page.partes-comestibles-page .pc-iconbtn:hover:not(:disabled) {
+    background: #EAF3EE;
+    color: var(--pc-accent);
+}
+
+.pc-page.partes-comestibles-page .pc-iconbtn:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.pc-page.partes-comestibles-page .pc-species {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    margin-bottom: 20px;
+    padding: 15px 18px;
+    border: 1px solid #CFE0D5;
+    border-radius: 15px;
+    background: linear-gradient(160deg, #fff 0%, #EAF5EE 100%);
+}
+
+.pc-page.partes-comestibles-page .pc-species-avatar {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #2F7A58;
+    color: #fff;
+    box-shadow: 0 6px 14px rgba(47, 122, 88, .25);
+}
+
+.pc-page.partes-comestibles-page .pc-species-text {
+    flex: 1;
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.pc-page.partes-comestibles-page .pc-species-text small,
+.pc-page.partes-comestibles-page .pc-species-extra small {
+    color: #698076;
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .9px;
+    text-transform: uppercase;
+}
+
+.pc-page.partes-comestibles-page .pc-species-text strong {
+    margin-top: 2px;
+    overflow: hidden;
+    color: var(--pc-ink);
+    font-size: 15px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pc-page.partes-comestibles-page .pc-species-text em {
+    margin-top: 2px;
+    overflow: hidden;
+    color: var(--pc-muted);
+    font-size: 12px;
+    font-style: italic;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pc-page.partes-comestibles-page .pc-species-extra {
+    min-width: 150px;
+    padding-left: 18px;
+    border-left: 1px solid #D3E2D8;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.pc-page.partes-comestibles-page .pc-species-extra strong {
+    margin-top: 3px;
+    color: var(--pc-ink);
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.pc-page.partes-comestibles-page .pc-stats {
+    display: grid;
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+    gap: 14px;
+    margin-bottom: 20px;
+}
+
+.pc-page.partes-comestibles-page .pc-stat {
+    --s-bg: #E6F3EB;
+    --s-line: #C9E0D3;
+    --s-icon: #2F7A58;
+    width: 100%;
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 18px;
+    border: 1px solid var(--s-line);
+    border-radius: 15px;
+    background: linear-gradient(160deg, #fff 0%, var(--s-bg) 100%);
+    box-shadow: 0 1px 2px rgba(20, 50, 35, .05);
+    font: inherit;
+    text-align: left;
+    cursor: pointer;
+    transition: transform .15s ease, border-color .15s ease, box-shadow .15s ease;
+}
+
+.pc-page.partes-comestibles-page .pc-stat:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(20, 50, 35, .10);
+}
+
+.pc-page.partes-comestibles-page .pc-stat[aria-pressed="true"] {
+    border-color: var(--s-icon);
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--s-icon) 20%, transparent), 0 10px 24px rgba(20, 50, 35, .10);
+}
+
+.pc-page.partes-comestibles-page .pc-stat-total {
+    --s-bg: #E6F3EB;
+    --s-line: #C9E0D3;
+    --s-icon: #2F7A58;
+}
+
+.pc-page.partes-comestibles-page .pc-stat-ok {
+    --s-bg: #DFF3E6;
+    --s-line: #BFE0CB;
+    --s-icon: #278251;
+}
+
+.pc-page.partes-comestibles-page .pc-stat-off {
+    --s-bg: #FDE8E8;
+    --s-line: #F0C6C6;
+    --s-icon: #C63D3D;
+}
+
+.pc-page.partes-comestibles-page .pc-stat-cat {
+    --s-bg: #F5E9EE;
+    --s-line: #E7CAD5;
+    --s-icon: #A14968;
+}
+
+.pc-page.partes-comestibles-page .pc-stat-icon {
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    flex: 0 0 44px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: var(--s-icon);
+    color: #fff;
+    box-shadow: none;
+}
+
+.pc-page.partes-comestibles-page .pc-stat-text {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.pc-page.partes-comestibles-page .pc-stat-text strong {
+    color: var(--pc-ink);
+    font-size: 25px;
+    font-weight: 750;
+    line-height: 1.1;
+}
+
+.pc-page.partes-comestibles-page .pc-stat-text span {
+    margin-top: 3px;
+    overflow: hidden;
+    color: var(--pc-muted);
+    font-size: 12.5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pc-page.partes-comestibles-page .pc-card {
+    overflow: hidden;
+    border: 1px solid var(--pc-line);
+    border-radius: 18px;
+    background: #fff;
+    box-shadow: 0 1px 2px rgba(20, 50, 35, .05), 0 12px 30px rgba(20, 50, 35, .06);
+}
+
+.pc-page.partes-comestibles-page .pc-toolbar {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 18px;
+    flex-wrap: wrap;
+    background: var(--pc-tint);
+}
+
+.pc-page.partes-comestibles-page .pc-search {
+    flex: 1;
+    min-width: 220px;
+    max-width: 460px;
+    height: 42px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 10px 0 13px;
+    border: 1px solid #D5E2DA;
+    border-radius: 11px;
+    background: #fff;
+    color: var(--pc-muted);
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.pc-page.partes-comestibles-page .pc-search:focus-within {
+    border-color: #7FB596;
+    box-shadow: 0 0 0 4px rgba(47, 122, 88, .12);
+    color: var(--pc-accent);
+}
+
+.pc-page.partes-comestibles-page .pc-search input {
+    flex: 1;
+    min-width: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--pc-ink);
+    font: inherit;
+    font-size: 13.5px;
+}
+
+.pc-page.partes-comestibles-page .pc-search input::placeholder {
+    color: #9AA8A0;
+}
+
+.pc-page.partes-comestibles-page .pc-clear {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 0;
+    border-radius: 50%;
+    background: #DDE7E1;
+    color: #5A6F63;
+    cursor: pointer;
+}
+
+.pc-page.partes-comestibles-page .pc-clear:hover {
+    background: #CBDAD1;
+    color: #314D3E;
+}
+
+.pc-page.partes-comestibles-page .pc-seg {
+    display: inline-flex;
+    padding: 3px;
+    border-radius: 11px;
+    background: #E4EDE8;
+}
+
+.pc-page.partes-comestibles-page .pc-seg button {
+    height: 36px;
+    padding: 0 14px;
+    border: 0;
+    border-radius: 8px;
+    background: transparent;
+    color: #66786E;
+    font: inherit;
+    font-size: 13px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.pc-page.partes-comestibles-page .pc-seg button.on {
+    background: #fff;
+    color: var(--pc-ink);
+    box-shadow: 0 1px 4px rgba(20, 50, 35, .14);
+}
+
+.pc-page.partes-comestibles-page .pc-refresh {
+    margin-left: auto;
+}
+
+.pc-page.partes-comestibles-page .pc-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #BACCC1 #EFF4F1;
+    -webkit-overflow-scrolling: touch;
+}
+
+.pc-page.partes-comestibles-page .pc-table-wrap::-webkit-scrollbar {
+    height: 7px;
+}
+
+.pc-page.partes-comestibles-page .pc-table-wrap::-webkit-scrollbar-track {
+    background: #EFF4F1;
+}
+
+.pc-page.partes-comestibles-page .pc-table-wrap::-webkit-scrollbar-thumb {
+    border-radius: 10px;
+    background: #BACCC1;
+}
+
+.pc-page.partes-comestibles-page .pc-table {
+    width: 100%;
+    min-width: 850px;
+    border-collapse: collapse;
+}
+
+.pc-page.partes-comestibles-page .pc-table th {
+    height: 46px;
+    padding: 0 18px;
+    border-bottom: 1px solid #CFE0D5;
+    background: #E8F2EC;
+    color: #3F6552;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .7px;
+    text-align: left;
+    text-transform: uppercase;
+}
+
+.pc-page.partes-comestibles-page .pc-table td {
+    padding: 13px 18px;
+    border-bottom: 1px solid #EDF1EE;
+    color: var(--pc-text);
+    font-size: 13.5px;
+    vertical-align: middle;
+}
+
+.pc-page.partes-comestibles-page .pc-table tbody tr {
+    transition: background .12s ease, box-shadow .12s ease;
+}
+
+.pc-page.partes-comestibles-page .pc-table tbody tr:hover {
+    background: #F5FAF7;
+}
+
+.pc-page.partes-comestibles-page .pc-table tbody tr.is-off {
+    background: #FFF8F8;
+}
+
+.pc-page.partes-comestibles-page .pc-table tbody tr.is-off:hover {
+    background: #FFF1F1;
+}
+
+.pc-page.partes-comestibles-page .pc-table tbody tr.is-off .pc-name strong {
+    color: #7C5555;
+}
+
+.pc-page.partes-comestibles-page .pc-table tbody tr.is-off .pc-avatar {
+    background: #FDECEC;
+    color: #C94B4B;
+    box-shadow: none;
+}
+
+.pc-page.partes-comestibles-page .pc-name {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pc-page.partes-comestibles-page .pc-name>span:last-child {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.pc-page.partes-comestibles-page .pc-name strong {
+    overflow: hidden;
+    color: var(--pc-ink);
+    font-size: 14px;
+    font-weight: 650;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pc-page.partes-comestibles-page .pc-name small {
+    margin-top: 2px;
+    color: #9AA8A0;
+    font-size: 11.5px;
+}
+
+.pc-page.partes-comestibles-page .pc-avatar {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: linear-gradient(145deg, #4D9A72, #2F7A58);
+    color: #fff;
+    box-shadow: 0 4px 10px rgba(47, 122, 88, .28);
+}
+
+.pc-page.partes-comestibles-page .pc-desc {
+    display: block;
+    max-width: 350px;
+    overflow: hidden;
+    color: var(--pc-muted);
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pc-page.partes-comestibles-page .pc-warning-text {
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    overflow: hidden;
+    color: #8A672A;
+    font-size: 12.5px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pc-page.partes-comestibles-page .pc-warning-text svg {
+    flex-shrink: 0;
+}
+
+.pc-page.partes-comestibles-page .pc-muted {
+    color: #9AA8A0;
+    font-size: 12.5px;
+}
+
+.pc-page.partes-comestibles-page .pc-status {
+    min-height: 27px;
+    padding: 0 11px;
+    display: inline-flex;
+    align-items: center;
+    gap: 7px;
+    border-radius: 999px;
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.pc-page.partes-comestibles-page .pc-status i {
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+}
+
+.pc-page.partes-comestibles-page .pc-status.active {
+    background: #DFF3E6;
+    color: #217447;
+}
+
+.pc-page.partes-comestibles-page .pc-status.active i {
+    background: #3FA56C;
+}
+
+.pc-page.partes-comestibles-page .pc-status.inactive {
+    background: #FDE8E8;
+    color: #B63C3C;
+}
+
+.pc-page.partes-comestibles-page .pc-status.inactive i {
+    background: #D94B4B;
+}
+
+.pc-page.partes-comestibles-page .pc-col-actions {
+    width: 120px;
+    text-align: right !important;
+}
+
+.pc-page.partes-comestibles-page .pc-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 7px;
+}
+
+.pc-page.partes-comestibles-page .pc-actions button {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    cursor: pointer;
+    transition: background .15s ease, color .15s ease, border-color .15s ease, transform .15s ease, box-shadow .15s ease;
+}
+
+.pc-page.partes-comestibles-page .pc-actions button:not(.off):not(.on) {
+    border: 1px solid #B9D5F5;
+    background: #EFF6FF;
+    color: #2563EB;
+}
+
+.pc-page.partes-comestibles-page .pc-actions button:not(.off):not(.on):hover {
+    background: #DBEAFE;
+    border-color: #93C5FD;
+    color: #1D4ED8;
+    transform: translateY(-1px);
+}
+
+.pc-page.partes-comestibles-page .pc-actions button.on {
+    border: 1px solid #A8D8BB;
+    background: #E3F5EA;
+    color: #1F7A4A;
+}
+
+.pc-page.partes-comestibles-page .pc-actions button.on:hover {
+    background: #D2EFDD;
+    border-color: #7FC59B;
+}
+
+.pc-page.partes-comestibles-page .pc-actions button.off {
+    border: 1px solid #F3C1C1;
+    background: #FFF1F1;
+    color: #D14343;
+}
+
+.pc-page.partes-comestibles-page .pc-actions button.off:hover {
+    background: #FDE2E2;
+    border-color: #EFA2A2;
+    color: #B91C1C;
+}
+
+.pc-page.partes-comestibles-page .pc-actions button:disabled {
+    opacity: .5;
+    cursor: not-allowed;
+}
+
+.pc-page.partes-comestibles-page .pc-state {
+    min-height: 250px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 24px;
+    color: #87948C;
+    text-align: center;
+}
+
+.pc-page.partes-comestibles-page .pc-empty svg {
+    color: #8FBDA3;
+}
+
+.pc-page.partes-comestibles-page .pc-empty strong {
+    color: var(--pc-ink);
+    font-size: 15px;
+}
+
+.pc-page.partes-comestibles-page .pc-empty span {
+    max-width: 460px;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.pc-page.partes-comestibles-page .pc-empty .pc-btn {
+    margin-top: 10px;
+}
+
+.pc-page.partes-comestibles-page .pc-spinner {
+    width: 26px;
+    height: 26px;
+    border: 3px solid #DFEAE3;
+    border-top-color: var(--pc-accent);
+    border-radius: 50%;
+    animation: pc-partes-spin .7s linear infinite;
+}
+
+.pc-page.partes-comestibles-page .girando {
+    animation: pc-partes-spin .8s linear infinite;
+}
+
+@keyframes pc-partes-spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.pc-page.partes-comestibles-page .pc-pagination {
+    min-height: 60px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-top: 1px solid var(--pc-line);
+    background: var(--pc-tint);
+}
+
+.pc-page.partes-comestibles-page .pc-pagination>span {
+    color: var(--pc-muted);
+    font-size: 12.5px;
+}
+
+.pc-page.partes-comestibles-page .pc-pagination>span strong {
+    color: var(--pc-text);
+}
+
+.pc-page.partes-comestibles-page .pc-pagination>div {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.pc-page.partes-comestibles-page .pc-pagination button {
+    width: 34px;
+    height: 34px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #D3E1D8;
+    border-radius: 9px;
+    background: #fff;
+    color: #4C6558;
+    cursor: pointer;
+}
+
+.pc-page.partes-comestibles-page .pc-pagination button:hover:not(:disabled) {
+    background: #EAF3EE;
+}
+
+.pc-page.partes-comestibles-page .pc-pagination button:disabled {
+    opacity: .4;
+    cursor: not-allowed;
+}
+
+.pc-page.partes-comestibles-page .pc-page-current {
+    min-width: 62px;
+    text-align: center;
+    color: var(--pc-text);
+    font-size: 13px;
+    font-weight: 700;
+}
+
+.pc-page.partes-comestibles-page .pc-overlay {
+    position: fixed;
+    top: var(--header-h, 72px);
+    right: 0;
+    bottom: 0;
+    left: 260px;
+    z-index: 2000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(12, 32, 24, .5);
+    backdrop-filter: blur(6px);
+    animation: pc-partes-fade .2s ease;
+}
+
+.app-content-mini .pc-page.partes-comestibles-page .pc-overlay {
+    left: 78px;
+}
+
+.pc-page.partes-comestibles-page .pc-panel {
+    width: min(620px, calc(100% - 40px));
+    max-height: calc(100vh - var(--header-h, 72px) - 40px);
+    display: flex;
+    flex-direction: column;
+    border: 0;
+    border-radius: 20px;
+    background: #fff;
+    box-shadow: 0 34px 85px rgba(10, 30, 20, .4), 0 9px 26px rgba(10, 30, 20, .14);
+    overflow: hidden;
+    animation: pc-partes-modal .25s cubic-bezier(.2, .8, .2, 1);
+}
+
+.pc-page.partes-comestibles-page .pc-panel>form {
+    flex: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+@keyframes pc-partes-fade {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pc-partes-modal {
+    from {
+        opacity: 0;
+        transform: translateY(16px) scale(.975);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+.pc-page.partes-comestibles-page .pc-modal-head {
+    position: relative;
+    overflow: hidden;
+    min-height: 82px;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 16px 20px;
+    background: linear-gradient(120deg, #12322A 0%, #1F5C4A 70%, #2F7A58 100%);
+    flex-shrink: 0;
+}
+
+.pc-page.partes-comestibles-page .pc-modal-head::before {
+    content: "";
+    position: absolute;
+    top: -90px;
+    right: -40px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle, rgba(111, 211, 155, .26), transparent 68%);
+    pointer-events: none;
+}
+
+.pc-page.partes-comestibles-page .pc-modal-head>* {
+    position: relative;
+    z-index: 1;
+}
+
+.pc-page.partes-comestibles-page .pc-modal-head-icon {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 13px;
+    background: linear-gradient(145deg, #4A9A70, #2F7A58);
+    color: #fff;
+    box-shadow: 0 6px 16px rgba(0, 0, 0, .25);
+}
+
+.pc-page.partes-comestibles-page .pc-modal-head-text {
+    flex: 1;
+    min-width: 0;
+}
+
+.pc-page.partes-comestibles-page .pc-modal-head-text span {
+    display: block;
+    color: rgba(255, 255, 255, .62);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+}
+
+.pc-page.partes-comestibles-page .pc-modal-head-text h2 {
+    margin: 3px 0 0;
+    overflow: hidden;
+    color: #fff;
+    font-size: 20px;
+    font-weight: 750;
+    letter-spacing: -.3px;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pc-page.partes-comestibles-page .pc-modal-head .pc-iconbtn {
+    border-color: rgba(255, 255, 255, .25);
+    background: rgba(255, 255, 255, .12);
+    color: #fff;
+}
+
+.pc-page.partes-comestibles-page .pc-modal-head .pc-iconbtn:hover {
+    background: rgba(255, 255, 255, .24);
+    color: #fff;
+}
+
+.pc-page.partes-comestibles-page .pc-modal-body {
+    flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    overflow-x: hidden;
+    padding: 22px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    background: var(--pc-tint);
+    scrollbar-width: thin;
+    scrollbar-color: #7FA18E #EAF1ED;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
+}
+
+.pc-page.partes-comestibles-page .pc-modal-body::-webkit-scrollbar {
+    width: 8px;
+}
+
+.pc-page.partes-comestibles-page .pc-modal-body::-webkit-scrollbar-track {
+    background: #EAF1ED;
+    border-radius: 10px;
+}
+
+.pc-page.partes-comestibles-page .pc-modal-body::-webkit-scrollbar-thumb {
+    background: #7FA18E;
+    border-radius: 10px;
+}
+
+.pc-page.partes-comestibles-page .pc-modal-body::-webkit-scrollbar-thumb:hover {
+    background: #5F8871;
+}
+
+.pc-page.partes-comestibles-page .pc-form-error {
+    padding: 10px 12px;
+    border: 1px solid #F0B6B8;
+    border-radius: 10px;
+    background: #FFF1F1;
+    color: #A82D32;
+    font-size: 12.5px;
+    font-weight: 600;
+}
+
+.pc-page.partes-comestibles-page .pc-validation-note {
+    color: var(--pc-muted);
+    font-size: 11.5px;
+    line-height: 1.45;
+}
+
+.pc-page.partes-comestibles-page .pc-preview,
+.pc-page.partes-comestibles-page .pc-selection-preview {
+    padding: 14px 16px;
+    border: 1px solid var(--pc-line);
+    border-left: 4px solid var(--pc-accent);
+    border-radius: 13px;
+    background: #fff;
+}
+
+.pc-page.partes-comestibles-page .pc-preview>small {
+    display: block;
+    margin-bottom: 9px;
+    color: var(--pc-muted);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+.pc-page.partes-comestibles-page .pc-preview>div,
+.pc-page.partes-comestibles-page .pc-selection-preview {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.pc-page.partes-comestibles-page .pc-preview-avatar {
+    width: 42px;
+    height: 42px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: #E5F2EA;
+    color: var(--pc-accent);
+}
+
+.pc-page.partes-comestibles-page .pc-preview-text {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.pc-page.partes-comestibles-page .pc-preview-text strong {
+    overflow: hidden;
+    color: var(--pc-ink);
+    font-size: 14.5px;
+    font-weight: 650;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.pc-page.partes-comestibles-page .pc-preview-text em {
+    margin-top: 2px;
+    color: var(--pc-muted);
+    font-size: 12px;
+    line-height: 1.4;
+}
+
+.pc-page.partes-comestibles-page .pc-preview:first-child .pc-preview-text em {
+    font-style: italic;
+}
+
+.pc-page.partes-comestibles-page .pc-field {
+    min-width: 0;
+}
+
+.pc-page.partes-comestibles-page .pc-field label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--pc-text);
+    font-size: 12.5px;
+    font-weight: 650;
+}
+
+.pc-page.partes-comestibles-page .pc-field label span {
+    color: #D0393E;
+}
+
+.pc-page.partes-comestibles-page .pc-field select,
+.pc-page.partes-comestibles-page .pc-field textarea {
+    width: 100%;
+    border: 1px solid #D5E2DA;
+    border-radius: 11px;
+    background: #fff;
+    color: var(--pc-ink);
+    font: inherit;
+    font-size: 13.5px;
+    outline: 0;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.pc-page.partes-comestibles-page .pc-field select {
+    height: 44px;
+    padding: 0 42px 0 13px;
+    background: #fff url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='16' height='16' viewBox='0 0 24 24' fill='none' stroke='%236A7E72' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='m6 9 6 6 6-6'/%3E%3C/svg%3E") no-repeat right 13px center;
+    appearance: none;
+    cursor: pointer;
+}
+
+.pc-page.partes-comestibles-page .pc-field textarea {
+    min-height: 105px;
+    padding: 11px 13px;
+    resize: vertical;
+    line-height: 1.5;
+}
+
+.pc-page.partes-comestibles-page .pc-field select:hover,
+.pc-page.partes-comestibles-page .pc-field textarea:hover {
+    border-color: #BCD2C4;
+}
+
+.pc-page.partes-comestibles-page .pc-field select:focus,
+.pc-page.partes-comestibles-page .pc-field textarea:focus {
+    border-color: #7FB596;
+    box-shadow: 0 0 0 4px rgba(47, 122, 88, .12);
+}
+
+.pc-page.partes-comestibles-page .pc-field.has-error select,
+.pc-page.partes-comestibles-page .pc-field.has-error textarea {
+    border-color: #E5484D;
+    background-color: #FFF7F7;
+}
+
+.pc-page.partes-comestibles-page .pc-field-foot {
+    min-height: 18px;
+    margin-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.pc-page.partes-comestibles-page .pc-field-foot small {
+    color: #9AA8A0;
+    font-size: 11px;
+}
+
+.pc-page.partes-comestibles-page .pc-field-foot small.pc-err {
+    color: #C23B3B;
+    font-weight: 600;
+}
+
+.pc-page.partes-comestibles-page .pc-backend-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 12px 14px;
+    border: 1px solid #C2DDCC;
+    border-radius: 12px;
+    background: #E6F3EB;
+    color: #3F6552;
+}
+
+.pc-page.partes-comestibles-page .pc-backend-info>svg {
+    flex-shrink: 0;
+    margin-top: 1px;
+    color: #2F7A58;
+}
+
+.pc-page.partes-comestibles-page .pc-backend-info>div {
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+}
+
+.pc-page.partes-comestibles-page .pc-backend-info strong {
+    color: #2F5A44;
+    font-size: 12px;
+}
+
+.pc-page.partes-comestibles-page .pc-backend-info span {
+    color: #5C7A6A;
+    font-size: 11.5px;
+    line-height: 1.45;
+}
+
+.pc-page.partes-comestibles-page .pc-modal-foot {
+    flex-shrink: 0;
+    display: flex;
+    gap: 10px;
+    padding: 14px 22px;
+    border-top: 1px solid var(--pc-line);
+    background: #fff;
+}
+
+.pc-page.partes-comestibles-page .pc-modal-foot .pc-btn {
+    flex: 1;
+    min-height: 43px;
+}
+
+.pc-page.partes-comestibles-page .pc-modal-foot .pc-btn-primary {
+    flex: 1.45;
+}
+
+.pc-page.partes-comestibles-page .pc-btn:focus-visible,
+.pc-page.partes-comestibles-page .pc-iconbtn:focus-visible,
+.pc-page.partes-comestibles-page .pc-stat:focus-visible,
+.pc-page.partes-comestibles-page .pc-seg button:focus-visible,
+.pc-page.partes-comestibles-page .pc-actions button:focus-visible,
+.pc-page.partes-comestibles-page .pc-pagination button:focus-visible {
+    outline: 3px solid rgba(47, 122, 88, .4);
+    outline-offset: 2px;
+}
+
+@media(max-width:1100px) {
+    .pc-page.partes-comestibles-page .pc-stats {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+@media(max-width:900px) {
+    .pc-page.partes-comestibles-page .pc-head {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 24px 22px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-head .pc-btn-lg {
+        width: 100%;
+    }
+
+    .pc-page.partes-comestibles-page .pc-overlay {
+        left: 78px;
+        padding: 16px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-panel {
+        width: min(620px, calc(100% - 32px));
+        max-height: calc(100vh - var(--header-h, 72px) - 32px);
+    }
+}
+
+@media(max-width:760px) {
+    .pc-page.partes-comestibles-page .pc-head h1 {
+        font-size: 27px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-species {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .pc-page.partes-comestibles-page .pc-species-extra {
+        width: 100%;
+        min-width: 0;
+        margin-left: 57px;
+        padding: 10px 0 0;
+        border-top: 1px solid #D3E2D8;
+        border-left: 0;
+    }
+
+    .pc-page.partes-comestibles-page .pc-search {
+        max-width: none;
+        flex-basis: 100%;
+    }
+
+    .pc-page.partes-comestibles-page .pc-refresh {
+        margin-left: 0;
+    }
+
+    .pc-page.partes-comestibles-page .pc-col-warning {
+        display: none;
+    }
+
+    .pc-page.partes-comestibles-page .pc-table {
+        min-width: 680px;
+    }
+}
+
+@media(max-width:650px) {
+    .pc-page.partes-comestibles-page {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        overflow-x: hidden;
+    }
+
+    .pc-page.partes-comestibles-page .pc-species {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .pc-page.partes-comestibles-page .pc-species-extra {
+        width: 100%;
+        min-width: 0;
+        margin-left: 56px;
+        padding: 10px 0 0;
+        border-top: 1px solid #D3E2D8;
+        border-left: 0;
+        display: flex;
+    }
+
+    .pc-page.partes-comestibles-page .pc-overlay {
+        left: 78px;
+        padding: 10px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-panel {
+        width: 100%;
+        max-height: calc(100vh - var(--header-h, 72px) - 20px);
+        border-radius: 16px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-modal-head {
+        min-height: 72px;
+        padding: 14px 16px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-modal-head-icon {
+        width: 42px;
+        height: 42px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-modal-head-text h2 {
+        font-size: 18px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-modal-body {
+        padding: 16px;
+        gap: 16px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-modal-foot {
+        padding: 12px 16px;
+    }
+}
+
+@media(max-width:520px) {
+    .pc-page.partes-comestibles-page .pc-head {
+        padding: 20px 18px;
+        border-radius: 16px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-head h1 {
+        font-size: 24px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-head p {
+        font-size: 12.5px;
+        line-height: 1.5;
+    }
+
+    .pc-page.partes-comestibles-page .pc-species {
+        padding: 12px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-species-extra {
+        margin-left: 0;
+    }
+
+    .pc-page.partes-comestibles-page .pc-stats {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-stat {
+        min-height: 70px;
+        padding: 14px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-stat-icon {
+        width: 42px;
+        height: 42px;
+        min-width: 42px;
+        flex-basis: 42px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-stat-text strong {
+        font-size: 23px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-stat-text span {
+        font-size: 11.5px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-toolbar {
+        align-items: stretch;
+        flex-direction: column;
+        padding: 14px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-search {
+        width: 100%;
+        max-width: none;
+        min-width: 0;
+        flex-basis: auto;
+    }
+
+    .pc-page.partes-comestibles-page .pc-seg {
+        width: 100%;
+    }
+
+    .pc-page.partes-comestibles-page .pc-seg button {
+        flex: 1;
+        min-width: 0;
+        padding: 0 8px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-refresh {
+        width: 100%;
+        height: 40px;
+        margin-left: 0;
+    }
+
+    .pc-page.partes-comestibles-page .pc-overlay {
+        left: 78px;
+        top: var(--header-h, 72px);
+        padding: 0;
+    }
+
+    .pc-page.partes-comestibles-page .pc-panel {
+        width: 100%;
+        height: calc(100vh - var(--header-h, 72px));
+        max-height: none;
+        border-radius: 0;
+    }
+
+    .pc-page.partes-comestibles-page .pc-panel>form {
+        flex: 1;
+        min-height: 0;
+        display: flex;
+        flex-direction: column;
+        overflow: hidden;
+    }
+
+    .pc-page.partes-comestibles-page .pc-modal-body {
+        flex: 1;
+        min-height: 0;
+        overflow-y: auto;
+        overflow-x: hidden;
+        -webkit-overflow-scrolling: touch;
+    }
+
+    .pc-page.partes-comestibles-page .pc-modal-foot {
+        flex-shrink: 0;
+        flex-direction: column-reverse;
+    }
+
+    .pc-page.partes-comestibles-page .pc-modal-foot .pc-btn,
+    .pc-page.partes-comestibles-page .pc-modal-foot .pc-btn-primary {
+        width: 100%;
+        flex: none;
+    }
+
+    .pc-page.partes-comestibles-page .pc-pagination {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+        padding: 12px 16px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-pagination>div {
+        width: 100%;
+        justify-content: space-between;
+    }
+}
+
+@media(max-width:420px) {
+    .pc-page.partes-comestibles-page .pc-head {
+        padding: 18px 15px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-head h1 {
+        font-size: 22px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-head p {
+        font-size: 11.5px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-species-avatar {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-species-text strong {
+        font-size: 13.5px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-species-text em {
+        font-size: 11px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-stat {
+        padding: 13px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-toolbar {
+        padding: 12px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-col-desc {
+        display: none;
+    }
+
+    .pc-page.partes-comestibles-page .pc-table {
+        min-width: 520px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-modal-head-text h2 {
+        font-size: 17px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-preview,
+    .pc-page.partes-comestibles-page .pc-selection-preview {
+        padding: 12px;
+    }
+}
+
+@media(max-width:350px) {
+    .pc-page.partes-comestibles-page .pc-head {
+        padding: 17px 13px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-head h1 {
+        font-size: 21px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-stat {
+        gap: 11px;
+        padding: 12px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-stat-icon {
+        width: 40px;
+        height: 40px;
+        min-width: 40px;
+        flex-basis: 40px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-stat-text strong {
+        font-size: 22px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-modal-head {
+        padding: 12px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-modal-body {
+        padding: 13px;
+    }
+
+    .pc-page.partes-comestibles-page .pc-modal-foot {
+        padding: 10px 13px;
+    }
+}
+
+@media(prefers-reduced-motion:reduce) {
+
+    .pc-page.partes-comestibles-page .pc-stat,
+    .pc-page.partes-comestibles-page .pc-btn,
+    .pc-page.partes-comestibles-page .pc-actions button,
+    .pc-page.partes-comestibles-page .pc-spinner,
+    .pc-page.partes-comestibles-page .girando,
+    .pc-page.partes-comestibles-page .pc-panel,
+    .pc-page.partes-comestibles-page .pc-overlay {
+        transition: none;
+        animation: none;
+    }
+}
+
+.pc-part-select-row {
+    width: 100%;
+    min-width: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) auto;
+    align-items: stretch;
+    gap: 9px;
+}
+
+.pc-part-select-row select {
+    width: 100%;
+    min-width: 0;
+}
+
+.pc-part-combo {
+    position: relative;
+    width: 100%;
+    min-width: 0;
+}
+
+.pc-part-combo-control {
+    width: 100%;
+    min-height: 44px;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 12px;
+    border: 1px solid #D5E2DA;
+    border-radius: 11px;
+    background: #fff;
+    color: #6A7E72;
+    transition: border-color .15s ease, box-shadow .15s ease;
+}
+
+.pc-part-combo-control:focus-within,
+.pc-part-combo-control.is-open {
+    border-color: #7FB596;
+    box-shadow: 0 0 0 4px rgba(47, 122, 88, .12);
+}
+
+.pc-part-combo-control>svg {
+    flex: 0 0 auto;
+}
+
+.pc-part-combo-control>svg:last-child {
+    margin-left: auto;
+    transition: transform .15s ease;
+}
+
+.pc-part-combo-control>svg:last-child.is-open {
+    transform: rotate(180deg);
+}
+
+.pc-part-combo-control input {
+    width: 100%;
+    min-width: 0;
+    height: 42px;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    background: transparent;
+    color: var(--pc-ink);
+    font: inherit;
+    font-size: 13.5px;
+}
+
+.pc-part-combo-control input::placeholder {
+    color: #829188;
+}
+
+.pc-field.has-error .pc-part-combo-control {
+    border-color: #E5484D;
+    background: #FFF7F7;
+}
+
+.pc-part-combo-options {
+    position: absolute;
+    z-index: 20;
+    top: calc(100% + 5px);
+    right: 0;
+    left: 0;
+    max-height: 220px;
+    overflow-y: auto;
+    padding: 5px;
+    border: 1px solid #D5E2DA;
+    border-radius: 11px;
+    background: #fff;
+    box-shadow: 0 10px 24px rgba(18, 50, 42, .16);
+}
+
+.pc-part-combo-options button {
+    width: 100%;
+    min-height: 38px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+    padding: 8px 10px;
+    border: 0;
+    border-radius: 7px;
+    background: transparent;
+    color: var(--pc-ink);
+    font: inherit;
+    font-size: 13px;
+    text-align: left;
+    cursor: pointer;
+}
+
+.pc-part-combo-options button:hover,
+.pc-part-combo-options button[aria-selected="true"] {
+    background: #EAF5EE;
+    color: #1F5C43;
+}
+
+.pc-part-combo-options button svg {
+    flex: 0 0 auto;
+    color: var(--pc-accent);
+}
+
+.pc-part-combo-options p {
+    margin: 0;
+    padding: 12px 10px;
+    color: var(--pc-muted);
+    font-size: 12.5px;
+}
+
+.pc-register-part-btn {
+    min-width: 145px;
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 0 14px;
+    border: 1px solid #B9D9C6;
+    border-radius: 10px;
+    background: #EDF7F0;
+    color: #276E4C;
+    font: inherit;
+    font-size: 11px;
+    font-weight: 750;
+    white-space: nowrap;
+    cursor: pointer;
+    transition:
+        background .16s ease,
+        border-color .16s ease,
+        color .16s ease,
+        transform .16s ease,
+        box-shadow .16s ease;
+}
+
+.pc-register-part-btn svg {
+    flex: 0 0 auto;
+}
+
+.pc-register-part-btn:hover {
+    border-color: #7DB694;
+    background: #DFF0E5;
+    color: #1F5C43;
+    transform: translateY(-1px);
+    box-shadow: 0 5px 12px rgba(47, 122, 88, .12);
+}
+
+.pc-register-part-btn:active {
+    transform: translateY(0);
+}
+
+.pc-register-part-btn:focus-visible {
+    outline: 3px solid rgba(47, 122, 88, .18);
+    outline-offset: 2px;
+}
+
+@media(max-width:650px) {
+    .pc-part-select-row {
+        grid-template-columns: 1fr;
+    }
+
+    .pc-register-part-btn {
+        width: 100%;
+        min-width: 0;
+        min-height: 42px;
+    }
+}
+
+@media(max-width:430px) {
+    .pc-register-part-btn {
+        font-size: 10.5px;
+    }
+}
+
+.pc-head-actions {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 10px;
+    flex-shrink: 0;
+}
+
+.pc-btn.pc-btn-change {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    padding: 0 16px;
+    border: 1px solid rgba(255, 255, 255, .28);
+    border-radius: 11px;
+    background: rgba(255, 255, 255, .12);
+    color: #fff;
+    font: inherit;
+    font-size: 12px;
+    font-weight: 700;
+    white-space: nowrap;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    -webkit-backdrop-filter: blur(6px);
+    box-shadow: none;
+    transition:
+        background .16s ease,
+        border-color .16s ease,
+        transform .16s ease;
+}
+
+.pc-btn.pc-btn-change svg {
+    flex-shrink: 0;
+    color: #fff;
+}
+
+.pc-btn.pc-btn-change:hover {
+    border-color: rgba(255, 255, 255, .42);
+    background: rgba(255, 255, 255, .20);
+    color: #fff;
+    transform: translateY(-1px);
+}
+
+.pc-btn.pc-btn-change:active {
+    transform: translateY(0);
+}
+
+.pc-btn.pc-btn-change:focus-visible {
+    outline: 3px solid rgba(255, 255, 255, .22);
+    outline-offset: 2px;
+}
+
+@media(max-width:760px) {
+    .pc-head {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .pc-head-actions {
+        width: 100%;
+    }
+
+    .pc-head-actions .pc-btn {
+        flex: 1;
+    }
+}
+
+@media(max-width:520px) {
+    .pc-head-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+        width: 100%;
+    }
+
+    .pc-head-actions .pc-btn {
+        width: 100%;
+    }
+}

@@ -1,0 +1,1492 @@
+.ne-page {
+    --ne-accent: var(--accent, #2F7A58);
+    --ne-accent-dark: var(--accent-dark, #256146);
+    --ne-deep: #12322A;
+    --ne-ink: #1B3328;
+    --ne-text: #33493E;
+    --ne-muted: #7B8C83;
+    --ne-line: #DCE7E0;
+    --ne-tint: #F3F8F5;
+    --ne-field: #F6FAF8;
+    width: 100%;
+    max-width: 1500px;
+    min-width: 0;
+    margin: 0 auto;
+    color: var(--ne-ink);
+    overflow-x: hidden;
+}
+
+@media(max-width:900px) and (orientation:landscape) {
+    .ne-heading {
+        align-items: center;
+        flex-direction: row;
+        gap: 12px;
+        margin-bottom: 10px;
+        padding: 12px 16px;
+    }
+
+    .ne-heading h1 {
+        font-size: 20px;
+    }
+
+    .ne-heading p {
+        margin-top: 3px;
+        font-size: 11px;
+    }
+
+    .ne-crumb {
+        margin-bottom: 2px;
+        font-size: 10px;
+    }
+
+    .ne-back {
+        width: auto;
+        min-width: 90px;
+        min-height: 36px;
+        flex-shrink: 0;
+        font-size: 11px;
+    }
+
+    .ne-steps {
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: 6px;
+        margin-bottom: 10px;
+    }
+
+    .ne-step {
+        min-height: 48px;
+        gap: 7px;
+        padding: 6px 9px;
+    }
+
+    .ne-step-number {
+        width: 28px;
+        height: 28px;
+        min-width: 28px;
+        font-size: 11px;
+    }
+
+    .ne-step strong {
+        font-size: 11px;
+    }
+
+    .ne-step small {
+        font-size: 9px;
+    }
+
+    .ne-content {
+        grid-template-columns: minmax(0, 1fr);
+    }
+
+    .ne-preview {
+        display: none;
+    }
+
+    .ne-form-card {
+        padding-bottom: 12px;
+    }
+}
+
+/* =========================================================
+   BANNER DE ENCABEZADO
+   ========================================================= */
+
+.ne-heading {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    margin-bottom: 20px;
+    padding: 26px 30px;
+    border-radius: 20px;
+    background: linear-gradient(120deg,
+            #12322A 0%,
+            #1F5C4A 62%,
+            #2F7A58 100%);
+    box-shadow: 0 14px 34px rgba(18, 50, 42, .22);
+}
+
+.ne-heading::before {
+    content: "";
+    position: absolute;
+    top: -120px;
+    right: -60px;
+    width: 320px;
+    height: 320px;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+            rgba(111, 211, 155, .28),
+            transparent 68%);
+    pointer-events: none;
+}
+
+.ne-heading::after {
+    content: "";
+    position: absolute;
+    bottom: -140px;
+    left: 30%;
+    width: 280px;
+    height: 280px;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+            rgba(255, 255, 255, .07),
+            transparent 70%);
+    pointer-events: none;
+}
+
+.ne-heading>* {
+    position: relative;
+    z-index: 1;
+}
+
+.ne-crumb {
+    display: block;
+    margin-bottom: 6px;
+    color: rgba(255, 255, 255, .62);
+    font-size: 11.5px;
+    font-weight: 500;
+}
+
+.ne-heading h1 {
+    margin: 0;
+    color: #fff;
+    font-size: clamp(20px, 3vw, 31px);
+    font-weight: 750;
+    letter-spacing: -.6px;
+    line-height: 1.15;
+    white-space: nowrap;
+}
+
+.ne-heading p {
+    margin: 6px 0 0;
+    color: rgba(255, 255, 255, .74);
+    font-size: 13.5px;
+}
+
+.ne-back {
+    min-height: 40px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border: 1px solid rgba(255, 255, 255, .28);
+    border-radius: 11px;
+    background: rgba(255, 255, 255, .12);
+    color: #fff;
+    font: inherit;
+    font-weight: 600;
+    cursor: pointer;
+    backdrop-filter: blur(6px);
+    transition: background .15s ease;
+}
+
+.ne-back:hover {
+    background: rgba(255, 255, 255, .22);
+}
+
+/* =========================================================
+   ESTRUCTURA
+   ========================================================= */
+
+.ne-shell {
+    min-width: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+    overflow: visible;
+}
+
+/* =========================================================
+   PASOS
+   ========================================================= */
+
+.ne-steps {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 12px;
+    margin-bottom: 18px;
+    border: 0;
+}
+
+.ne-step {
+    min-width: 0;
+    min-height: 76px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 0 22px;
+    border: 1px solid #D9E5DD;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, .55);
+    color: var(--ne-muted);
+    font: inherit;
+    text-align: left;
+    cursor: default;
+    transition:
+        background .2s ease,
+        border-color .2s ease,
+        box-shadow .2s ease;
+}
+
+.ne-step-number {
+    width: 38px;
+    height: 38px;
+    min-width: 38px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: #E3EBE6;
+    color: #5A6F63;
+    font-weight: 700;
+}
+
+.ne-step>span:last-child {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.ne-step strong {
+    min-width: 0;
+    color: #4A5E53;
+    font-size: 13.5px;
+    overflow-wrap: anywhere;
+}
+
+.ne-step small {
+    margin-top: 3px;
+    color: var(--ne-muted);
+    font-size: 11.5px;
+    overflow-wrap: anywhere;
+}
+
+.ne-step.active {
+    border-color: transparent;
+    background: linear-gradient(135deg,
+            #1F5C4A,
+            #2F7A58);
+    box-shadow: 0 10px 24px rgba(31, 92, 74, .28);
+}
+
+.ne-step.active strong {
+    color: #fff;
+}
+
+.ne-step.active small {
+    color: rgba(255, 255, 255, .75);
+}
+
+.ne-step.active .ne-step-number {
+    background: #fff;
+    color: var(--ne-accent);
+}
+
+.ne-step.done {
+    border-color: #C2DDCC;
+    background: #E6F3EB;
+    cursor: pointer;
+}
+
+.ne-step.done:hover {
+    border-color: #8FC0A6;
+}
+
+.ne-step.done strong {
+    color: #26583F;
+}
+
+.ne-step.done .ne-step-number {
+    background: var(--ne-accent);
+    color: #fff;
+}
+
+.ne-step:focus-visible {
+    outline: 3px solid rgba(47, 122, 88, .4);
+    outline-offset: 2px;
+}
+
+/* =========================================================
+   CONTENIDO
+   ========================================================= */
+
+.ne-content {
+    width: 100%;
+    min-width: 0;
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 360px;
+    gap: 20px;
+    padding: 0;
+    background: transparent;
+}
+
+.ne-form-card {
+    min-width: 0;
+    overflow: hidden;
+    padding: 0 26px 0;
+    border: 1px solid var(--ne-line);
+    border-radius: 18px;
+    background: #fff;
+    box-shadow:
+        0 1px 2px rgba(20, 50, 35, .05),
+        0 12px 30px rgba(20, 50, 35, .06);
+}
+
+.ne-section-head {
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    margin: 0 -26px 24px;
+    padding: 20px 26px;
+    border-bottom: 1px solid #E0EAE3;
+    background: linear-gradient(180deg,
+            #EBF5EF,
+            #F5FAF7);
+}
+
+.ne-section-head>span {
+    width: 42px;
+    height: 42px;
+    min-width: 42px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 12px;
+    background: linear-gradient(145deg,
+            #3A9468,
+            #1F5C4A);
+    color: #fff;
+    box-shadow: 0 6px 14px rgba(31, 92, 74, .25);
+}
+
+.ne-section-head>div {
+    min-width: 0;
+}
+
+.ne-section-head h2 {
+    margin: 0;
+    color: var(--ne-ink);
+    font-size: 18px;
+    font-weight: 700;
+}
+
+.ne-section-head p {
+    margin: 3px 0 0;
+    color: var(--ne-muted);
+    font-size: 12.5px;
+    line-height: 1.45;
+}
+
+.ne-section-head-action>div {
+    flex: 1;
+}
+
+.ne-add-common {
+    min-height: 38px;
+    flex-shrink: 0;
+    padding: 0 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border: 1px solid #A9CDB8;
+    border-radius: 10px;
+    background: #fff;
+    color: var(--ne-accent);
+    font: inherit;
+    font-weight: 650;
+    cursor: pointer;
+    transition: background .15s ease;
+}
+
+.ne-add-common:hover {
+    background: #EAF5EE;
+}
+
+/* =========================================================
+   CAMPOS
+   ========================================================= */
+
+.ne-field {
+    min-width: 0;
+    margin-bottom: 18px;
+}
+
+.ne-field label {
+    display: block;
+    margin-bottom: 7px;
+    color: var(--ne-text);
+    font-size: 12.5px;
+    font-weight: 650;
+}
+
+.ne-field input,
+.ne-field textarea {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+    border: 1px solid #D5E2DA;
+    border-radius: 11px;
+    background: var(--ne-field);
+    color: var(--ne-ink);
+    font: inherit;
+    font-size: 13.5px;
+    outline: 0;
+    transition:
+        background .15s ease,
+        border-color .15s ease,
+        box-shadow .15s ease;
+}
+
+.ne-fields {
+    min-width: 0;
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+
+.ne-fields:disabled {
+    opacity: .7;
+}
+
+.ne-field input {
+    height: 43px;
+    padding: 0 13px;
+}
+
+.ne-field textarea {
+    padding: 11px 13px;
+    resize: vertical;
+}
+
+.ne-field input:hover,
+.ne-field textarea:hover {
+    border-color: #BCD2C4;
+}
+
+.ne-field input:focus,
+.ne-field textarea:focus {
+    border-color: #7FB596;
+    background: #fff;
+    box-shadow: 0 0 0 4px rgba(47, 122, 88, .12);
+}
+
+.ne-field input::placeholder,
+.ne-field textarea::placeholder {
+    color: #9AA8A0;
+}
+
+.ne-field.error input,
+.ne-field.error textarea {
+    border-color: #E06B6B;
+    background: #FFF7F7;
+}
+
+.ne-field.error input:focus,
+.ne-field.error textarea:focus {
+    box-shadow: 0 0 0 4px rgba(224, 107, 107, .12);
+}
+
+.ne-field-foot {
+    min-height: 18px;
+    margin-top: 5px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.ne-field-foot small {
+    color: #9AA8A0;
+    font-size: 11px;
+}
+
+.ne-field-foot .ne-error {
+    flex: 1;
+}
+
+.ne-error {
+    color: #C23B3B !important;
+    font-size: 11px;
+    font-weight: 600;
+    line-height: 1.4;
+}
+
+.ne-grid-2,
+.ne-tax-grid {
+    min-width: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 18px;
+}
+
+/* =========================================================
+   PUNTOS 6 Y 7 - NOMBRES CIENTÍFICOS
+   ========================================================= */
+
+.ne-scientific-input {
+    font-style: italic !important;
+    letter-spacing: .1px;
+}
+
+.ne-scientific-input::placeholder {
+    font-style: italic;
+}
+
+.ne-scientific-name {
+    font-style: italic !important;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.ne-scientific-value {
+    font-style: italic !important;
+    overflow-wrap: anywhere;
+    word-break: break-word;
+}
+
+.ne-scientific-help {
+    display: block;
+    margin-top: 3px;
+    color: #6F8277;
+    font-size: 10.5px;
+    line-height: 1.5;
+}
+
+.ne-scientific-help em {
+    color: #355B48;
+    font-style: italic;
+    font-weight: 700;
+}
+
+/* =========================================================
+   AVISO
+   ========================================================= */
+
+.ne-info {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    padding: 13px 15px;
+    border: 1px solid #F0DDA0;
+    border-radius: 12px;
+    background: #FFF7DD;
+    color: #7A5E12;
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.ne-info svg {
+    flex-shrink: 0;
+    margin-top: 1px;
+}
+
+.ne-global-error {
+    margin-bottom: 16px;
+    padding: 11px 14px;
+    border: 1px solid #F0C3C3;
+    border-radius: 11px;
+    background: #FFF1F1;
+    color: #B13636;
+    font-size: 12px;
+    font-weight: 600;
+}
+
+/* =========================================================
+   NOMBRES COMUNES
+   ========================================================= */
+
+.ne-common-empty {
+    min-height: 230px;
+    margin-bottom: 4px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 20px;
+    box-sizing: border-box;
+    border: 1px dashed #C4D8CB;
+    border-radius: 15px;
+    background: var(--ne-field);
+    color: #849289;
+    text-align: center;
+}
+
+.ne-common-empty svg {
+    color: #8FBDA3;
+}
+
+.ne-common-empty strong {
+    color: var(--ne-text);
+    font-size: 14.5px;
+}
+
+.ne-common-empty span {
+    font-size: 12.5px;
+}
+
+.ne-common-empty button {
+    margin-top: 10px;
+    min-height: 40px;
+    padding: 0 15px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    border: 0;
+    border-radius: 10px;
+    background: var(--ne-accent);
+    color: #fff;
+    font: inherit;
+    font-weight: 650;
+    cursor: pointer;
+}
+
+.ne-common-empty button:hover {
+    background: var(--ne-accent-dark);
+}
+
+.ne-common-list {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-bottom: 4px;
+}
+
+.ne-common-card {
+    min-width: 0;
+    display: grid;
+    grid-template-columns:
+        34px minmax(0, 1fr) 38px;
+    gap: 14px;
+    padding: 16px;
+    border: 1px solid var(--ne-line);
+    border-left: 4px solid #BCD7C7;
+    border-radius: 13px;
+    background: var(--ne-tint);
+    transition:
+        background .15s ease,
+        border-color .15s ease;
+}
+
+.ne-common-card:has(.ne-principal input:checked) {
+    border-color: #B5D6C2;
+    border-left-color: var(--ne-accent);
+    background: #E8F4ED;
+}
+
+.ne-common-number {
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 9px;
+    background: #fff;
+    color: var(--ne-accent);
+    font-size: 12px;
+    font-weight: 700;
+    box-shadow: 0 1px 3px rgba(20, 50, 35, .12);
+}
+
+.ne-common-fields {
+    min-width: 0;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 0 14px;
+}
+
+.ne-common-fields .ne-field {
+    margin-bottom: 12px;
+}
+
+.ne-common-fields .ne-field input {
+    background: #fff;
+}
+
+.ne-principal {
+    grid-column: 1/-1;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--ne-text);
+    font-size: 12.5px;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.ne-principal input {
+    width: 16px;
+    height: 16px;
+    accent-color: var(--ne-accent);
+}
+
+.ne-delete-common {
+    width: 36px;
+    height: 36px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #F0C5C5;
+    border-radius: 10px;
+    background: #fff;
+    color: #C64949;
+    cursor: pointer;
+    transition: background .15s ease;
+}
+
+.ne-delete-common:hover {
+    background: #FFF0F0;
+}
+
+/* =========================================================
+   BARRA DE ACCIONES
+   ========================================================= */
+
+.ne-form-actions {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 24px -26px 0;
+    padding: 16px 26px;
+    border-top: 1px solid #E0EAE3;
+    background: var(--ne-tint);
+}
+
+.ne-action-spacer {
+    flex: 1;
+}
+
+.ne-btn-primary,
+.ne-btn-secondary {
+    min-height: 43px;
+    padding: 0 18px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    border-radius: 11px;
+    font: inherit;
+    font-size: 13.5px;
+    font-weight: 650;
+    cursor: pointer;
+    transition:
+        background .15s ease,
+        box-shadow .15s ease,
+        transform .15s ease;
+}
+
+.ne-btn-primary {
+    border: 0;
+    background: linear-gradient(135deg,
+            #3A9468,
+            #2A6F4E);
+    color: #fff;
+    box-shadow:
+        0 6px 16px rgba(47, 122, 88, .26),
+        inset 0 1px 0 rgba(255, 255, 255, .16);
+}
+
+.ne-btn-primary:hover:not(:disabled) {
+    box-shadow:
+        0 9px 22px rgba(47, 122, 88, .34),
+        inset 0 1px 0 rgba(255, 255, 255, .16);
+}
+
+.ne-btn-primary:active:not(:disabled) {
+    transform: translateY(1px);
+}
+
+.ne-btn-primary:disabled {
+    opacity: .6;
+    cursor: not-allowed;
+}
+
+.ne-btn-secondary {
+    border: 1px solid #CFE0D5;
+    background: #fff;
+    color: var(--ne-text);
+}
+
+.ne-btn-secondary:hover {
+    background: #EEF5F0;
+    border-color: #B5CFBF;
+}
+
+.ne-btn-primary:focus-visible,
+.ne-btn-secondary:focus-visible,
+.ne-add-common:focus-visible,
+.ne-back:focus-visible {
+    outline: 3px solid rgba(47, 122, 88, .4);
+    outline-offset: 2px;
+}
+
+/* =========================================================
+   VISTA PREVIA
+   ========================================================= */
+
+.ne-preview {
+    position: sticky;
+    top: 92px;
+    align-self: start;
+    min-width: 0;
+    overflow: hidden;
+    padding: 22px;
+    border: 0;
+    border-radius: 18px;
+    background: linear-gradient(170deg,
+            #17402F 0%,
+            #12322A 55%,
+            #0C241B 100%);
+    box-shadow: 0 16px 38px rgba(12, 36, 27, .28);
+    color: #fff;
+}
+
+.ne-preview::before {
+    content: "";
+    position: absolute;
+    top: -90px;
+    right: -70px;
+    width: 220px;
+    height: 220px;
+    border-radius: 50%;
+    background: radial-gradient(circle,
+            rgba(111, 211, 155, .22),
+            transparent 68%);
+    pointer-events: none;
+}
+
+.ne-preview>* {
+    position: relative;
+    z-index: 1;
+}
+
+.ne-preview-head {
+    display: flex;
+    align-items: center;
+    gap: 11px;
+    padding-bottom: 16px;
+    border-bottom: 1px solid rgba(255, 255, 255, .1);
+}
+
+.ne-preview-head>svg {
+    flex-shrink: 0;
+    color: #6FD39B;
+}
+
+.ne-preview-head>div {
+    min-width: 0;
+    display: flex;
+    flex-direction: column;
+}
+
+.ne-preview-head strong {
+    color: #fff;
+    font-size: 14.5px;
+}
+
+.ne-preview-head span {
+    margin-top: 2px;
+    color: rgba(255, 255, 255, .58);
+    font-size: 11px;
+}
+
+.ne-preview-main {
+    min-width: 0;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 18px 0;
+}
+
+.ne-preview-main>div:last-child {
+    min-width: 0;
+}
+
+.ne-preview-icon {
+    width: 50px;
+    height: 50px;
+    min-width: 50px;
+    flex-shrink: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 14px;
+    background: rgba(111, 211, 155, .16);
+    color: #6FD39B;
+}
+
+.ne-preview-main h3 {
+    margin: 0;
+    color: #fff;
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.3;
+    word-break: break-word;
+}
+
+.ne-preview-main span {
+    display: block;
+    margin-top: 3px;
+    color: rgba(255, 255, 255, .6);
+    font-size: 11.5px;
+    overflow-wrap: anywhere;
+}
+
+.ne-preview-row {
+    min-width: 0;
+    display: grid;
+    grid-template-columns: 112px minmax(0, 1fr);
+    gap: 10px;
+    padding: 7px 0;
+    font-size: 12px;
+}
+
+.ne-preview-row span {
+    color: rgba(255, 255, 255, .5);
+}
+
+.ne-preview-row strong {
+    min-width: 0;
+    color: #EAF5EE;
+    font-weight: 550;
+    word-break: break-word;
+    overflow-wrap: anywhere;
+    white-space: pre-wrap;
+}
+
+.ne-preview-row.compact {
+    padding: 4px 0;
+}
+
+.ne-preview-divider {
+    height: 1px;
+    margin: 15px 0;
+    background: rgba(255, 255, 255, .1);
+}
+
+.ne-preview h4 {
+    margin: 0 0 10px;
+    color: #6FD39B;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 1.1px;
+    text-transform: uppercase;
+}
+
+.ne-none {
+    color: rgba(255, 255, 255, .5);
+    font-size: 12px;
+    font-style: italic;
+}
+
+.ne-common-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px;
+}
+
+.ne-common-tags span {
+    max-width: 100%;
+    padding: 5px 11px;
+    border: 1px solid rgba(255, 255, 255, .1);
+    border-radius: 999px;
+    background: rgba(255, 255, 255, .08);
+    color: rgba(255, 255, 255, .78);
+    font-size: 11.5px;
+    overflow-wrap: anywhere;
+}
+
+.ne-common-tags span.principal {
+    border-color: rgba(111, 211, 155, .4);
+    background: rgba(111, 211, 155, .2);
+    color: #94E6B8;
+    font-weight: 700;
+}
+
+/* =========================================================
+   TABLET / LAPTOP PEQUEÑA
+   ========================================================= */
+
+@media(max-width:1100px) {
+
+    .ne-content {
+        grid-template-columns: 1fr;
+    }
+
+    .ne-preview {
+        position: static;
+        width: 100%;
+    }
+
+    .ne-preview-row {
+        grid-template-columns:
+            minmax(120px, .4fr) minmax(0, 1fr);
+    }
+}
+
+/* =========================================================
+   TABLET
+   ========================================================= */
+
+@media(max-width:750px) {
+
+    .ne-page {
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .ne-steps {
+        grid-template-columns: 1fr;
+    }
+
+    .ne-step {
+        min-height: 62px;
+    }
+
+    .ne-grid-2,
+    .ne-tax-grid,
+    .ne-common-fields {
+        grid-template-columns: 1fr;
+    }
+
+    .ne-heading {
+        align-items: flex-start;
+        flex-direction: column;
+        padding: 22px 20px;
+    }
+
+    .ne-heading h1 {
+        font-size: clamp(20px, 4vw, 27px);
+    }
+
+    .ne-heading p {
+        font-size: 12.5px;
+        line-height: 1.5;
+    }
+
+    .ne-back {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .ne-form-card {
+        padding: 0 18px;
+    }
+
+    .ne-section-head {
+        margin: 0 -18px 20px;
+        padding: 18px;
+    }
+
+    .ne-section-head-action {
+        align-items: flex-start;
+        flex-wrap: wrap;
+    }
+
+    .ne-section-head-action .ne-add-common {
+        margin-left: 56px;
+    }
+
+    .ne-form-actions {
+        margin: 20px -18px 0;
+        padding: 14px 18px;
+    }
+
+    .ne-preview {
+        padding: 18px;
+    }
+
+    .ne-preview-row {
+        grid-template-columns:
+            120px minmax(0, 1fr);
+    }
+
+    .ne-scientific-input {
+        font-size: 13.5px;
+    }
+}
+
+/* =========================================================
+   MÓVIL
+   ========================================================= */
+
+@media(max-width:520px) {
+
+    .ne-page {
+        width: 100%;
+        max-width: 100%;
+        overflow-x: hidden;
+    }
+
+    .ne-heading {
+        margin-bottom: 14px;
+        padding: 19px 15px;
+        border-radius: 16px;
+    }
+
+    .ne-heading h1 {
+        font-size: clamp(19px, 6vw, 23px);
+    }
+
+    .ne-heading p {
+        font-size: 11.5px;
+        line-height: 1.5;
+    }
+
+    .ne-crumb {
+        font-size: 10px;
+    }
+
+    .ne-back {
+        min-height: 38px;
+        font-size: 12px;
+    }
+
+    .ne-steps {
+        gap: 8px;
+        margin-bottom: 13px;
+    }
+
+    .ne-step {
+        min-height: 56px;
+        gap: 10px;
+        padding: 9px 12px;
+        border-radius: 12px;
+    }
+
+    .ne-step-number {
+        width: 32px;
+        height: 32px;
+        min-width: 32px;
+        font-size: 11px;
+    }
+
+    .ne-step strong {
+        font-size: 12px;
+    }
+
+    .ne-step small {
+        font-size: 10px;
+    }
+
+    .ne-content {
+        gap: 13px;
+    }
+
+    .ne-form-card {
+        width: 100%;
+        max-width: 100%;
+        min-width: 0;
+        padding: 0 13px;
+        border-radius: 15px;
+    }
+
+    .ne-section-head {
+        gap: 10px;
+        margin: 0 -13px 16px;
+        padding: 14px 13px;
+    }
+
+    .ne-section-head>span {
+        width: 36px;
+        height: 36px;
+        min-width: 36px;
+        border-radius: 10px;
+    }
+
+    .ne-section-head>span svg {
+        width: 17px;
+        height: 17px;
+    }
+
+    .ne-section-head h2 {
+        font-size: 15px;
+    }
+
+    .ne-section-head p {
+        font-size: 10.5px;
+    }
+
+    .ne-section-head-action {
+        display: grid;
+        grid-template-columns:
+            36px minmax(0, 1fr);
+    }
+
+    .ne-section-head-action .ne-add-common {
+        grid-column: 1/-1;
+        width: 100%;
+        margin: 2px 0 0;
+    }
+
+    .ne-field {
+        margin-bottom: 15px;
+    }
+
+    .ne-field label {
+        margin-bottom: 6px;
+        font-size: 11.5px;
+    }
+
+    .ne-field input {
+        height: 41px;
+        padding: 0 11px;
+        font-size: 12px;
+    }
+
+    .ne-field textarea {
+        padding: 10px 11px;
+        font-size: 12px;
+    }
+
+    .ne-field-foot {
+        gap: 6px;
+    }
+
+    .ne-field-foot small,
+    .ne-error {
+        font-size: 9.5px;
+    }
+
+    .ne-scientific-help {
+        font-size: 9.5px;
+        line-height: 1.45;
+    }
+
+    .ne-info {
+        gap: 8px;
+        padding: 11px 12px;
+        font-size: 10.5px;
+    }
+
+    .ne-common-card {
+        position: relative;
+        grid-template-columns:
+            28px minmax(0, 1fr);
+        gap: 9px;
+        padding: 12px;
+    }
+
+    .ne-common-number {
+        width: 27px;
+        height: 27px;
+        font-size: 10px;
+    }
+
+    .ne-common-fields {
+        min-width: 0;
+    }
+
+    .ne-delete-common {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        width: 31px;
+        height: 31px;
+    }
+
+    .ne-common-fields .ne-field:first-child {
+        padding-right: 34px;
+    }
+
+    .ne-principal {
+        font-size: 11px;
+    }
+
+    .ne-common-empty {
+        min-height: 190px;
+        padding: 16px;
+    }
+
+    .ne-common-empty strong {
+        font-size: 13px;
+    }
+
+    .ne-common-empty span {
+        font-size: 11px;
+    }
+
+    .ne-form-actions {
+        margin: 18px -13px 0;
+        padding: 12px 13px;
+        flex-wrap: wrap;
+    }
+
+    .ne-btn-primary,
+    .ne-btn-secondary {
+        min-height: 41px;
+        padding: 0 13px;
+        font-size: 12px;
+    }
+
+    .ne-preview {
+        width: 100%;
+        max-width: 100%;
+        padding: 15px;
+        border-radius: 15px;
+    }
+
+    .ne-preview-head {
+        gap: 8px;
+        padding-bottom: 12px;
+    }
+
+    .ne-preview-head strong {
+        font-size: 13px;
+    }
+
+    .ne-preview-head span {
+        font-size: 9.5px;
+    }
+
+    .ne-preview-main {
+        gap: 10px;
+        padding: 14px 0;
+    }
+
+    .ne-preview-icon {
+        width: 43px;
+        height: 43px;
+        min-width: 43px;
+        border-radius: 12px;
+    }
+
+    .ne-preview-icon svg {
+        width: 23px;
+        height: 23px;
+    }
+
+    .ne-preview-main h3 {
+        font-size: 14px;
+        line-height: 1.25;
+    }
+
+    .ne-preview-main span {
+        font-size: 10px;
+    }
+
+    .ne-preview-row {
+        grid-template-columns:
+            minmax(80px, .7fr) minmax(0, 1.3fr);
+        gap: 7px;
+        padding: 5px 0;
+        font-size: 10.5px;
+    }
+
+    .ne-preview h4 {
+        font-size: 9.5px;
+    }
+
+    .ne-common-tags {
+        gap: 5px;
+    }
+
+    .ne-common-tags span {
+        padding: 4px 8px;
+        font-size: 9.5px;
+    }
+}
+
+/* =========================================================
+   MÓVIL PEQUEÑO
+   ========================================================= */
+
+@media(max-width:390px) {
+
+    .ne-heading {
+        padding: 17px 12px;
+    }
+
+    .ne-heading h1 {
+        font-size: 21px;
+    }
+
+    .ne-step {
+        padding: 8px 10px;
+    }
+
+    .ne-form-card {
+        padding: 0 10px;
+    }
+
+    .ne-section-head {
+        margin: 0 -10px 14px;
+        padding: 12px 10px;
+    }
+
+    .ne-section-head>span {
+        width: 33px;
+        height: 33px;
+        min-width: 33px;
+    }
+
+    .ne-section-head-action {
+        grid-template-columns:
+            33px minmax(0, 1fr);
+    }
+
+    .ne-field input {
+        height: 39px;
+        font-size: 11.5px;
+    }
+
+    .ne-field textarea {
+        font-size: 11.5px;
+    }
+
+    .ne-scientific-help {
+        font-size: 9px;
+    }
+
+    .ne-common-card {
+        padding: 10px;
+    }
+
+    .ne-delete-common {
+        top: 8px;
+        right: 8px;
+        width: 29px;
+        height: 29px;
+    }
+
+    .ne-form-actions {
+        margin: 16px -10px 0;
+        padding: 11px 10px;
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .ne-action-spacer {
+        display: none;
+    }
+
+    .ne-btn-primary,
+    .ne-btn-secondary {
+        width: 100%;
+    }
+
+    .ne-preview {
+        padding: 13px;
+    }
+
+    .ne-preview-main h3 {
+        font-size: 13px;
+    }
+
+    .ne-preview-row {
+        grid-template-columns:
+            minmax(70px, .65fr) minmax(0, 1.35fr);
+        gap: 5px;
+        font-size: 10px;
+    }
+}
